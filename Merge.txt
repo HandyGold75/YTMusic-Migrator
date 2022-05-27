@@ -1,0 +1,32 @@
+<MetaData>
+Title=Liked
+PlaylistID=Like
+<\MetaData>
+Liked Songs
+Spotify Playlist
+Spotify Playlist1
+
+<MetaData>
+Title=YTMusic Playlist
+PlaylistID=PLi9drqWffJ9FWBo7ZVOiaVy0UQQEm4IbP
+<\MetaData>
+Spotify Playlist2
+Spotify Playlist3
+Spotify Playlist4
+Spotify Playlist5
+
+<MetaData>
+Title=Safe YTMusic Playlist
+PlaylistID=PLi9drqWffJ9FWBo7ZVOiaVy0UQQEm4IbP
+Mode=Safe
+<\MetaData>
+Spotify Playlist6
+Spotify Playlist7
+
+<MetaData>
+Title=Safe YTMusic Playlist with Export
+PlaylistID=PLi9drqWffJ9FWBo7ZVOiaVy0UQQEm4IbP
+Mode=Safe,Export
+<\MetaData>
+Spotify Playlist8
+Spotify Playlist🏰
