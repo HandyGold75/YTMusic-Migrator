@@ -23,7 +23,8 @@ API connections are not made by myself, I've only modefied these for my specific
 * Python 3.10 or greater (Older version not tested).
 * Python Modules ytmusicapi.
 * Windows 10/ 11.
-* Microsoft Notepad (Not required to run).
+* Microsoft Notepad (Required for Osu).
+* Collection Manager (Required for Osu).
 
 ## Set up
 
