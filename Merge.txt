@@ -12,6 +12,7 @@ PlaylistID=PLi9drqWffJ9FWBo7ZVOiaVy0UQQEm4IbP
 <\MetaData>
 Spotify Playlist2
 Spotify Playlist3
+Osu Collection1
 Spotify Playlist4
 Spotify Playlist5
 
@@ -21,6 +22,7 @@ PlaylistID=PLi9drqWffJ9FWBo7ZVOiaVy0UQQEm4IbP
 Mode=Safe
 <\MetaData>
 Spotify Playlist6
+Osu Collection2
 Spotify Playlist7
 
 <MetaData>
@@ -30,3 +32,4 @@ Mode=Safe,Export
 <\MetaData>
 Spotify Playlist8
 Spotify Playlist🏰
+Osu Collection3

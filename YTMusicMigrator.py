@@ -530,19 +530,19 @@ class cacheHandler:
 
     def updateSpotify():
         scriptPath = path.split(__file__)[0]
-        if args.token:
-            spotify = SpotifyAPI(args.token)
+        if spotifyToken != "":
+            spotify = SpotifyAPI(spotifyToken)
         else:
             spotify = SpotifyAPI.authorize(client_id='5c098bcc800e45d49e476265bc9b6934', scope='playlist-read-private playlist-read-collaborative user-library-read')
         info('Loading user info...')
         me = spotify.get('me')
         info('Logged in as {display_name} ({id})'.format(**me))
         playlists = []
-        if 'liked' in args.migrate:
+        if 'liked' in args.cache:
             info('Loading liked songs...')
             liked_tracks = spotify.list('users/{user_id}/tracks'.format(user_id=me['id']), {'limit': 50})
             playlists += [{'name': 'Liked Songs', 'tracks': liked_tracks}]
-        if 'playlists' in args.migrate:
+        if 'playlists' in args.cache:
             info('Loading playlists...')
             playlist_data = spotify.list('users/{user_id}/playlists'.format(user_id=me['id']), {'limit': 50})
             info(f'Found {len(playlist_data)} playlists')
@@ -647,7 +647,6 @@ class cacheHandler:
 if __name__ == "__main__":
     scriptPath = path.split(__file__)[0]
     parser = ArgumentParser(description="Migrate your Spotify playlists and/ or Osu! collection to YTMusic.")
-    parser.add_argument("--token", metavar="OAUTH_TOKEN", help="Use a Spotify OAuth token (requires the `playlist-read-private` permission)")
     parser.add_argument("--cache", default="liked,playlists,osu", help="Cache liked, playlists and/ or osu collections (default:liked,playlists,osu)")
     parser.add_argument("--maxLenght", default=450, type=int, help="Maximal lenght of songs in seconds. (Default: 450)")
     parser.add_argument("--skip", default=0, type=int, help="Skip the first X playlists.")
@@ -660,6 +659,9 @@ if __name__ == "__main__":
     parser.add_argument("-setup", action="store_true", help="Start script in setup mode (See README.md).")
     parser.add_argument("-test", action="store_true", help="Test the script, will not create, append or like songs (Just log output)")
     args = parser.parse_args()
+    
+    spotifyToken = ""
+    
     if args.setup:
         scriptPath = path.split(__file__)[0]
         YTMusic.setup(filepath=scriptPath + "\\headers_auth.json")
@@ -671,8 +673,8 @@ if __name__ == "__main__":
         YouTubeAPI.removePlaylists()
     elif args.storeToTxt:
         YouTubeAPI.exportToDmp()
-    if "osu" in args.migrate:
+    if "osu" in args.cache:
         cacheHandler.updateOsu()
-    if "liked" in args.migrate or "playlists" in args.migrate:
+    if "liked" in args.cache or "playlists" in args.cache:
         cacheHandler.updateSpotify()
     YouTubeAPI.migrateDB(cacheHandler.quary())

@@ -1,0 +1,9 @@
+{
+    "Spotify_Token": null,
+    "Migrate": ["playlists","liked","osu"],
+    "Max_Song_Lenght": 450,
+    "Skip_Playlists": 0,
+    "Purge_PlaylistsSongs": false,
+    "Purge_LikedSongs": false,
+    "Delete_Playlists": false
+}
