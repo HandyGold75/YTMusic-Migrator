@@ -81,6 +81,7 @@ These are the available settings in the file Config.json:
   * WARNING! USE WITH CAUSION!
   * Will purge songs from any playlist listed in Merge.txt that do not have the safe mode specified.
 * Purge_LikedSongs
+  * WARNING! USE WITH CAUSION!
   * Will remove like from songs in playlist that are listed in Merge.txt that do not have the safe mode specified.
 * Delete_Playlists
   * WARNING! USE WITH CAUSION!
